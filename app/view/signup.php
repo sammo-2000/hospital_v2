@@ -1,0 +1,33 @@
+<?php
+$title = "Sign Up";
+if (isset($_POST['submit'])) {
+    include "app/contro/signupContro.php";
+    $signup = new SignUpContro($_POST['username'], $_POST['email'], $_POST['password'], $_POST['password_confirm']);
+    $signup->signup();
+}
+include "app/view/include/head.php";
+?>
+<form action="/signup" method="post" class="login box" autocomplete="off">
+    <h1>signup</h1>
+    <label for="username">username</label>
+    <input type="text" id="username" name="username">
+    <label for="email">email</label>
+    <input type="email" id="email" name="email">
+    <label for="password">password</label>
+    <input type="password" id="password" name="password">
+    <label for="password_confirm">password confirm</label>
+    <input type="password" id="password_confirm" name="password_confirm">
+    <?php
+    // checks if there is an error message stored in the session
+    if (isset($error_type) && isset($_SESSION['error'])) {
+        if ($error_type == "error") { ?>
+            <p class="error"><?php out($_SESSION['error']) ?></p>
+        <?php } else { ?>
+            <p class="success"><?= $_SESSION['error'] ?></p>
+    <?php }
+        unset($_SESSION['error']);
+    } ?>
+    <button name="submit" class="btn blue">signup</button>
+</form>
+<?php
+include "app/view/include/foot.php";
