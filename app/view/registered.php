@@ -3,7 +3,7 @@ $title = "register";
 include "app/view/include/head.php";
 ?>
 <form action="/registered" method="post" class="login box-700 box" autocomplete="off">
-    <h1>registered</h1>
+    <h1>register</h1>
     <div class="grid-1-2">
         <div>
             <label for="first_name">first name</label>
