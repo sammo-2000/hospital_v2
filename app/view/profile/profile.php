@@ -2,13 +2,21 @@
 $title = "Profile";
 include "app/contro/userContro.php";
 $user = new UserContro(null, null, null, null, null, null, null);
-$userData = $user->currentUser($_SESSION['userID']);
+if (isset($id)) {
+    // Search patient profile if searched by ID
+    $userData = $user->currentUser($id);
+} else {
+    // Search my profile if not viewed by ID
+    $userData = $user->currentUser($_SESSION['userID']);
+}
 include "app/view/include/head.php";
 ?>
 <div class="box-700 box profile">
     <div class="between">
         <h1>profile</h1>
-        <a href="/profile/edit" class="btn blue">Edit</a>
+        <?php if (!isset($id)) { ?>
+            <a href="/profile/edit" class="btn blue">Edit</a>
+        <?php } ?>
     </div>
     <h2>Detail</h2>
     <div class="grid-1-2">

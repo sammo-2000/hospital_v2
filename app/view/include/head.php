@@ -11,6 +11,7 @@
     <link rel="stylesheet" media="(max-width: 480px)" href="/public/css/mobile.css">
     <link rel="stylesheet" media="(min-width: 481px) and (max-width: 999px)" href="/public/css/iPad.css">
     <link rel="stylesheet" media="(min-width: 1000px)" href="/public/css/desktop.css">
+    <script src="/public/js/main.js" defer></script>
 </head>
 
 <body>
@@ -20,7 +21,11 @@
             <nav>
                 <ul>
                     <li><a href="/">home</a></li>
-                    <?php if (isset($_SESSION['logged_on'])) { ?>
+                    <?php if (isset($_SESSION['logged_on'])) { 
+                        if ($_SESSION['role'] != 'user') { ?>
+                            <!-- Staff only -->
+                            <li><a href="/search">search</a></li>
+                        <?php } ?>
                         <!-- Logged on -->
                         <li><a href="/profile">profile</a></li>
                         <li><a href="/logout">logout</a></li>

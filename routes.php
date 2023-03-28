@@ -12,6 +12,12 @@ if (isset($_SESSION['logged_on'])) {
         get('/profile/edit', '/app/view/profile/edit.php');
         get('/profile/edit/$error_type', '/app/view/profile/edit.php');
         post('/profile/edit', '/app/view/profile/edit.php');
+
+        if ($_SESSION['role'] != 'user') {
+            // Search
+            get('/search', '/app/view/search.php');
+            get('/profile/$id', '/app/view/profile/profile.php');
+        }
     }
     // Register
     get('/register/$error_type', '/app/view/registered.php');

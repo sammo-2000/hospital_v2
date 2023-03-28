@@ -42,6 +42,13 @@ h1 {
   align-items: center;
   justify-content: space-between;
 }
+.searchBar input {
+  height: 40px;
+  padding: 5px;
+  margin: 5px;
+  border-color: rgb(203, 203, 203);
+  outline: none;
+}
 /* Style the error message */
 .success,
 .error {
@@ -133,4 +140,36 @@ label span {
 }
 .profile p:first-child::after {
   content: ":";
+}
+/* Search page */
+.search {
+  width: 100%;
+  text-align: center;
+}
+.search th {
+  background: var(--blue);
+  color: white;
+  text-transform: uppercase;
+}
+.search tr {
+  height: 40px;
+}
+.search tbody a {
+  background: var(--blue);
+  fill: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  transition: var(--transition);
+}
+.search th:last-child,
+.search td:last-child {
+  width: 80px;
+}
+.search tbody a:hover {
+  background: var(--blueHover);
+}
+.search tr:nth-child(even) {
+  background: rgb(228, 228, 228);
 }

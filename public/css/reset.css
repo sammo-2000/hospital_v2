@@ -11,6 +11,7 @@
   --fontTwo: "Roboto", sans-serif;
   --blue: #0072c6;
   --blueHover: #005fad;
+  --transition: 300ms;
 }
 
 body {

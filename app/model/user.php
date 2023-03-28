@@ -16,4 +16,12 @@ class User extends Dbh
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$mobile, $email, $city, $postcode, $address, $history, $userID]);
     }
+    protected function getAllUsers()
+    {
+        $sql = 'SELECT * FROM `user`';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
+    }
 }

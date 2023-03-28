@@ -41,6 +41,7 @@ class LoginContro extends Login
         $_SESSION['logged_on'] = true;
         $_SESSION['userID'] = $result['userID'];
         $_SESSION['registered'] = $result['registered'];
+        $_SESSION['role'] = $result['role'];
         header("location: /"); // redirects to the homepage
     }
 }

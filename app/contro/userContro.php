@@ -20,6 +20,7 @@ class UserContro extends User
         $this->address = strtolower($address);
         $this->history = strtolower($history);
     }
+    // Update user information from profile edit page
     public function updateUser()
     {
         if (empty($this->mobile) || empty($this->email) || empty($this->city) || empty($this->postcode) || empty($this->address)) {
@@ -41,8 +42,14 @@ class UserContro extends User
         header("location: /profile/edit/success");
         exit();
     }
+    // Get current user detail for profile page
     public function currentUser($userID)
     {
         return $this->getUserByID($userID);
+    }
+    // Get all users for search page
+    public function getUsers()
+    {
+        return $this->getAllUsers();
     }
 }
