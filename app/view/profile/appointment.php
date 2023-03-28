@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
 }
 include "app/view/include/head.php";
 ?>
-<form action="/appointment/<?= $id ?>" method="post" class="login box box-700" autocomplete="off">
+<form action="/appointment/book/<?= $id ?>" method="post" class="login box box-700" autocomplete="off">
     <h1>appointment booking</h1>
     <?php
     // checks if there is an error message stored in the session

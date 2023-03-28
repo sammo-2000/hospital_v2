@@ -17,7 +17,7 @@ include "app/view/include/head.php";
     <div class="between">
         <h1>profile</h1>
         <?php if (isset($id)) { ?>
-            <a href="/appointment/<?= $id ?>" class="btn blue">book appointment</a>
+            <a href="/appointment/book/<?= $id ?>" class="btn blue">book appointment</a>
         <?php } else { ?>
             <a href="/profile/edit" class="btn blue">Edit</a>
         <?php } ?>
@@ -57,8 +57,15 @@ include "app/view/include/head.php";
             <p><?= $userData['history'] ?></p>
         </div>
     </div>
-    <?php if (isset($appointments[0]['appointmentID'])) { ?>
+    <div class="between">
         <h2>Upcoming appointment</h2>
+        <?php if (isset($id)) { ?>
+            <a href="/appointment/<?= $id ?>" class="btn blue">view</a>
+        <?php } else { ?>
+            <a href="/appointment/<?= $_SESSION['userID'] ?>" class="btn blue">view</a>
+        <?php } ?>
+    </div>
+    <?php if (isset($appointments[0]['appointmentID'])) { ?>
         <div class="grid-1-2">
             <?php foreach ($appointments as $appointment) { ?>
                 <div class="span-2 appointment">
@@ -85,6 +92,8 @@ include "app/view/include/head.php";
                 </div>
             <?php } ?>
         </div>
+    <?php } else { ?>
+        <span>no upcoming appointment</span>
     <?php } ?>
     <h2>Account info</h2>
     <div class="grid-1-2">

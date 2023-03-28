@@ -23,19 +23,23 @@ class AppointmentContro extends Appointment
     {
         if (empty($this->date) || empty($this->time) || empty($this->doctor) || empty($this->reason)) {
             $_SESSION['error'] = "Please make sure all fields are filled";
-            header("location: /appointment/$this->patientID/error");
+            header("location: /appointment/book/$this->patientID/error");
             exit();
         }
 
         if ($this->isTaken($this->date, $this->time, $this->doctor)) {
             $_SESSION['error'] = "sorry time slot is taken";
-            header("location: /appointment/$this->patientID/error");
+            header("location: /appointment/book/$this->patientID/error");
             exit();
         }
 
         $this->createAppointment($this->patientID, $this->date, $this->time, $this->doctor, $this->reason, $this->extra,);
         $_SESSION['error'] = "appointment created";
-        header("location: /appointment/$this->patientID/success");
+        header("location: /appointment/book/$this->patientID/success");
         exit();
+    }
+    public function updateResult()
+    {
+        $this->updateResults($this->patientID, $this->extra);
     }
 }

@@ -43,7 +43,16 @@ class User extends Dbh
     protected function getUpcomingAppointments($id, $date)
     {
         $date = date('Y-m-d');
-        $sql = 'SELECT * FROM `appointment` WHERE `date` >= ? AND `patientID` = ?';
+        $sql = 'SELECT * FROM `appointment` WHERE `date` >= ? AND `patientID` = ? ORDER BY `appointmentID` ASC';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$date, $id]);
+        $result = $stmt->fetchAll();
+        return $result;
+    }
+    protected function getOldAppointments($id, $date)
+    {
+        $date = date('Y-m-d');
+        $sql = 'SELECT * FROM `appointment` WHERE `date` < ? AND `patientID` = ? ORDER BY `appointmentID` DESC';
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$date, $id]);
         $result = $stmt->fetchAll();

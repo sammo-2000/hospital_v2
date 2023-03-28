@@ -20,4 +20,10 @@ class Appointment extends Dbh
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$patientID, $date, $time, $doctor, $reason, $extra]);
     }
+    protected function updateResults($appointmentID, $result)
+    {
+        $sql = 'UPDATE `appointment` SET `result` = ? WHERE `appointmentID` = ?';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$result, $appointmentID]);
+    }
 }

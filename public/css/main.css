@@ -11,6 +11,12 @@
 .height-50px {
   height: 50px;
 }
+h2 {
+  text-transform: uppercase;
+}
+.width-full {
+  width: 100%;
+}
 /* Style the button */
 .btn {
   padding: 10px 20px;
@@ -179,6 +185,14 @@ label span {
   display: flex;
   align-items: center;
   width: 90px;
+}
+.profile span {
+  text-align: center;
+  display: block;
+  margin-block: 30px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: grey;
 }
 /* Search page */
 .search {

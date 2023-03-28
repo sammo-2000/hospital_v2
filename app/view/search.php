@@ -24,7 +24,7 @@ include "app/view/include/head.php";
         <?php foreach ($users as $user) { ?>
             <tr>
                 <td><?= $user['userID'] ?></td>
-                <td><?= $user['first_name'] ?></td>
+                <td><?= $user['first_name'] ?> <?= $user['last_name'] ?></td>
                 <td><?= $user['dob'] ?></td>
                 <?php if ($_SESSION['role'] == 'admin') { ?>
                     <td><?= $user['role'] ?></td>

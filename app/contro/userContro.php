@@ -67,4 +67,8 @@ class UserContro extends User
     {
         return $this->getUpcomingAppointments($id, date('Y-m-d'));
     }
+    public function getOldAppointment($id)
+    {
+        return $this->getOldAppointments($id, date('Y-m-d'));
+    }
 }

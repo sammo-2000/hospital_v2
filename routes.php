@@ -13,13 +13,17 @@ if (isset($_SESSION['logged_on'])) {
         get('/profile/edit/$error_type', '/app/view/profile/edit.php');
         post('/profile/edit', '/app/view/profile/edit.php');
 
+        // Update appointment result
+        get('/appointment/$id', '/app/view/appointment.php');
+        post('/appointment/$id', '/app/view/appointment.php');
+
         if ($_SESSION['role'] != 'user') {
             // Search
             get('/search', '/app/view/search.php');
             get('/profile/$id', '/app/view/profile/profile.php');
-            get('/appointment/$id', '/app/view/profile/appointment.php');
-            get('/appointment/$id/$error_type', '/app/view/profile/appointment.php');
-            post('/appointment/$id', '/app/view/profile/appointment.php');
+            get('/appointment/book/$id', '/app/view/profile/appointment.php');
+            get('/appointment/book/$id/$error_type', '/app/view/profile/appointment.php');
+            post('/appointment/book/$id', '/app/view/profile/appointment.php');
         }
     }
     // Register
