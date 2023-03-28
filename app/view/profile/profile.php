@@ -5,9 +5,11 @@ $user = new UserContro(null, null, null, null, null, null, null);
 if (isset($id)) {
     // Search patient profile if searched by ID
     $userData = $user->currentUser($id);
+    $appointments = $user->getUpcomingAppointment($id);
 } else {
     // Search my profile if not viewed by ID
     $userData = $user->currentUser($_SESSION['userID']);
+    $appointments = $user->getUpcomingAppointment($_SESSION['userID']);
 }
 include "app/view/include/head.php";
 ?>
@@ -55,6 +57,35 @@ include "app/view/include/head.php";
             <p><?= $userData['history'] ?></p>
         </div>
     </div>
+    <?php if (isset($appointments[0]['appointmentID'])) { ?>
+        <h2>Upcoming appointment</h2>
+        <div class="grid-1-2">
+            <?php foreach ($appointments as $appointment) { ?>
+                <div class="span-2 appointment">
+                    <div>
+                        <p>date</p>
+                        <input value="<?= $appointment['date'] ?>" disabled>
+                    </div>
+                    <div>
+                        <p>time</p>
+                        <input value="<?= $appointment['time'] ?>" disabled>
+                    </div>
+                    <div>
+                        <p>doctor</p>
+                        <input value="<?= $appointment['doctor'] ?>" disabled>
+                    </div>
+                    <div>
+                        <p>reason</p>
+                        <input value="<?= $appointment['reason'] ?>" disabled>
+                    </div>
+                    <div>
+                        <p>extra info</p>
+                        <textarea disabled><?= $appointment['extra'] ?></textarea>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
+    <?php } ?>
     <h2>Account info</h2>
     <div class="grid-1-2">
         <div>

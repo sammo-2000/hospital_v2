@@ -40,4 +40,13 @@ class User extends Dbh
         $result = $stmt->fetchAll();
         return $result;
     }
+    protected function getUpcomingAppointments($id, $date)
+    {
+        $date = date('Y-m-d');
+        $sql = 'SELECT * FROM `appointment` WHERE `date` >= ? AND `patientID` = ?';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$date, $id]);
+        $result = $stmt->fetchAll();
+        return $result;
+    }
 }

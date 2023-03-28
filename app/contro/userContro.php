@@ -57,8 +57,14 @@ class UserContro extends User
     {
         return $this->getDoctors();
     }
+    // Get all reasons in appointment screen
     public function getAllReason()
     {
         return $this->getReasons();
+    }
+    // get all user upcoming appointment
+    public function getUpcomingAppointment($id)
+    {
+        return $this->getUpcomingAppointments($id, date('Y-m-d'));
     }
 }

@@ -152,6 +152,34 @@ label span {
 .profile p:first-child::after {
   content: ":";
 }
+.appointment {
+  display: flex;
+  flex-direction: column;
+}
+.appointment > div {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  margin-block: 5px;
+}
+.appointment :is(input, textarea) {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+  resize: none;
+}
+.appointment textarea {
+  height: 100px;
+}
+.appointment p {
+  min-height: 40px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  width: 90px;
+}
 /* Search page */
 .search {
   width: 100%;
