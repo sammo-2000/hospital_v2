@@ -14,7 +14,9 @@ include "app/view/include/head.php";
 <div class="box-700 box profile">
     <div class="between">
         <h1>profile</h1>
-        <?php if (!isset($id)) { ?>
+        <?php if (isset($id)) { ?>
+            <a href="/appointment/<?= $id ?>" class="btn blue">book appointment</a>
+        <?php } else { ?>
             <a href="/profile/edit" class="btn blue">Edit</a>
         <?php } ?>
     </div>

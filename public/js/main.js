@@ -1,3 +1,16 @@
+// Get the arrow
+let burger = document.querySelector(".burger");
+// Get header
+let header = document.querySelector("header");
+
+// Event to toggle menu
+burger.addEventListener("click", toggleMenu);
+
+// toggle function
+function toggleMenu() {
+  header.classList.toggle("active");
+}
+
 // Get search bar
 let searchInput = document.querySelector("#searchBar");
 // Get table

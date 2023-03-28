@@ -17,6 +17,9 @@ if (isset($_SESSION['logged_on'])) {
             // Search
             get('/search', '/app/view/search.php');
             get('/profile/$id', '/app/view/profile/profile.php');
+            get('/appointment/$id', '/app/view/profile/appointment.php');
+            get('/appointment/$id/$error_type', '/app/view/profile/appointment.php');
+            post('/appointment/$id', '/app/view/profile/appointment.php');
         }
     }
     // Register

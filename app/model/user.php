@@ -1,5 +1,5 @@
 <?php
-include "dbh.php";
+include_once "dbh.php";
 class User extends Dbh
 {
     protected function getUserByID($userID)
@@ -19,6 +19,22 @@ class User extends Dbh
     protected function getAllUsers()
     {
         $sql = 'SELECT * FROM `user`';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
+    }
+    protected function getDoctors()
+    {
+        $sql = 'SELECT * FROM `user` WHERE `role` = ?';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute(['doctor']);
+        $result = $stmt->fetchAll();
+        return $result;
+    }
+    protected function getReasons()
+    {
+        $sql = 'SELECT * FROM `reason`';
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute();
         $result = $stmt->fetchAll();

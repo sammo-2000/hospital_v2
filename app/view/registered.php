@@ -34,7 +34,7 @@ include "app/view/include/head.php";
         </div>
         <div>
             <label for="dob">date of birth</label>
-            <input type="date" id="dob" name="dob">
+            <input type="date" id="dob" name="dob" max="<?= date('Y-m-d'); ?>">
         </div>
         <div>
             <label for="city">city</label>

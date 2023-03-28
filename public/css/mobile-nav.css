@@ -1,0 +1,59 @@
+header > div {
+    z-index: 99;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    background: var(--blue);
+  }
+  header nav {
+    position: fixed;
+    background: var(--blue);
+    left: -200px;
+    top: 50px;
+    width: 200px;
+    text-align: center;
+    min-height: calc(100vh - 50px);
+    transition: var(--transition);
+  }
+  header nav ul {
+    display: flex;
+    flex-direction: column;
+    padding-block: 20px;
+  }
+  header nav ul a {
+    display: block;
+    margin-block: 5px;
+  }
+  header.active nav {
+    left: 0px;
+  }
+  .burger {
+    height: 50px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  .burger span {
+    width: 30px;
+    height: 3px;
+    background: white;
+    transition: var(--transition);
+  }
+  header.active .burger span:nth-child(1) {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  header.active .burger span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  header.active .burger span:nth-child(3) {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+  

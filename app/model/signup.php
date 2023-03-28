@@ -1,5 +1,5 @@
 <?php
-include "dbh.php";
+include_once "dbh.php";
 class SignUp extends Dbh
 {
     protected function isUserNameTaken($username)
@@ -7,7 +7,7 @@ class SignUp extends Dbh
         $sql = 'SELECT * FROM `user` WHERE `username` = ?';
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$username]);
-        $result = $stmt->fetch();
+        $stmt->fetch();
         if ($stmt->rowCount() > 0) {
             return true;
         } else {

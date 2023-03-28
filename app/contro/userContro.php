@@ -52,4 +52,13 @@ class UserContro extends User
     {
         return $this->getAllUsers();
     }
+    // Get all doctor for appointment
+    public function getAllDoctor()
+    {
+        return $this->getDoctors();
+    }
+    public function getAllReason()
+    {
+        return $this->getReasons();
+    }
 }

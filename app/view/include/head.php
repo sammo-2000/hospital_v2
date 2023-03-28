@@ -11,6 +11,7 @@
     <link rel="stylesheet" media="(max-width: 480px)" href="/public/css/mobile.css">
     <link rel="stylesheet" media="(min-width: 481px) and (max-width: 999px)" href="/public/css/iPad.css">
     <link rel="stylesheet" media="(min-width: 1000px)" href="/public/css/desktop.css">
+    <link rel="stylesheet" media="(max-width: 1000px)" href="/public/css/mobile-nav.css">
     <script src="/public/js/main.js" defer></script>
 </head>
 
@@ -18,6 +19,11 @@
     <header>
         <div class="wrapper">
             <a href="/">astro health care</a>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <nav>
                 <ul>
                     <li><a href="/">home</a></li>
@@ -38,5 +44,6 @@
             </nav>
         </div>
     </header>
+    <div class="height-50px"></div>
     <main>
         <div class="wrapper">

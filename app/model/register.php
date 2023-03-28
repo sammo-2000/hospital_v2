@@ -1,5 +1,5 @@
 <?php
-include "dbh.php";
+include_once "dbh.php";
 class Register extends Dbh
 {
     protected function registerUser($userID, $first_name, $last_name, $mobile, $dob, $city, $postcode, $address, $history = null)

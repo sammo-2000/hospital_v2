@@ -1,5 +1,5 @@
 <?php
-include "dbh.php";
+include_once "dbh.php";
 class Login extends Dbh
 {
     protected function getUserDetailByUsername($username)
