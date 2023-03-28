@@ -10,6 +10,8 @@ if (isset($_SESSION['logged_on'])) {
 
         // Profile edit
         get('/profile/edit', '/app/view/profile/edit.php');
+        get('/profile/edit/$error_type', '/app/view/profile/edit.php');
+        post('/profile/edit', '/app/view/profile/edit.php');
     }
     // Register
     get('/register/$error_type', '/app/view/registered.php');

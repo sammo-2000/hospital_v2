@@ -1,7 +1,7 @@
 <?php
 $title = "Profile";
 include "app/contro/userContro.php";
-$user = new UserContro();
+$user = new UserContro(null, null, null, null, null, null, null);
 $userData = $user->currentUser($_SESSION['userID']);
 include "app/view/include/head.php";
 ?>
