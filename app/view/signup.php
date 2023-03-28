@@ -9,14 +9,6 @@ include "app/view/include/head.php";
 ?>
 <form action="/signup" method="post" class="login box" autocomplete="off">
     <h1>signup</h1>
-    <label for="username">username</label>
-    <input type="text" id="username" name="username">
-    <label for="email">email</label>
-    <input type="email" id="email" name="email">
-    <label for="password">password</label>
-    <input type="password" id="password" name="password">
-    <label for="password_confirm">password confirm</label>
-    <input type="password" id="password_confirm" name="password_confirm">
     <?php
     // checks if there is an error message stored in the session
     if (isset($error_type) && isset($_SESSION['error'])) {
@@ -27,6 +19,14 @@ include "app/view/include/head.php";
     <?php }
         unset($_SESSION['error']);
     } ?>
+    <label for="username">username</label>
+    <input type="text" id="username" name="username">
+    <label for="email">email</label>
+    <input type="email" id="email" name="email">
+    <label for="password">password</label>
+    <input type="password" id="password" name="password">
+    <label for="password_confirm">password confirm</label>
+    <input type="password" id="password_confirm" name="password_confirm">
     <button name="submit" class="btn blue">signup</button>
 </form>
 <?php

@@ -1,4 +1,6 @@
 .grid-1-2 {
-    grid-template-columns: 1fr 1fr;
-  }
-  
+  grid-template-columns: 1fr 1fr;
+}
+.span-2 {
+  grid-column: span 2;
+}

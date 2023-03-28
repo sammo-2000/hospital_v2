@@ -4,18 +4,20 @@
 require_once __DIR__ . '/router.php';
 
 if (isset($_SESSION['logged_on'])) {
-    if ($_SESSION['registered'] == true) {
-        // Allow access only to users who are logged on & registered
-
+    if ($_SESSION['registered'] == 'true') {
         // Profile
         get('/profile', '/app/view/profile/profile.php');
+
+        // Profile edit
         get('/profile/edit', '/app/view/profile/edit.php');
     }
+    // Register
+    get('/register/$error_type', '/app/view/registered.php');
+    post('/register', '/app/view/registered.php');
+
     // Logout
     get('/logout', '/app/view/include/logout.php');
 } else {
-    // Allow access only to users who are not logged on
-
     // Login
     get('/login', '/app/view/login.php');
     get('/login/$error_type', '/app/view/login.php');
@@ -26,14 +28,12 @@ if (isset($_SESSION['logged_on'])) {
     get('/signup/$error_type', '/app/view/signup.php');
     post('/signup', '/app/view/signup.php');
 }
-
-// Allow access to all users
-
 // Route for the homepage
 get('/', '/app/view/index.php');
 
+// Load register page if user is logged on
 if (isset($_SESSION['logged_on'])) {
-    if ($_SESSION['registered'] != true) {
+    if ($_SESSION['registered'] == 'false') {
         any('/404', '/app/view/registered.php');
     }
 }
