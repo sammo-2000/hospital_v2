@@ -58,7 +58,7 @@ include "app/view/include/head.php";
         </div>
     </div>
     <div class="between">
-        <h2>Upcoming appointment</h2>
+        <h2>appointments</h2>
         <?php if (isset($id)) { ?>
             <a href="/appointment/<?= $id ?>" class="btn blue">view</a>
         <?php } else { ?>

@@ -7,6 +7,7 @@ if (isset($_POST['submit'])) {
     $update = new AppointmentContro($_POST['appointmentID'], null, null, null, null, $_POST['result']);
     $update->updateResult();
 }
+// User can only view their appointments
 if ($_SESSION['role'] == 'user') {
     $upcomings = $user->getUpcomingAppointment($_SESSION['userID']);
     $old_ones = $user->getOldAppointment($_SESSION['userID']);
@@ -14,12 +15,27 @@ if ($_SESSION['role'] == 'user') {
     $upcomings = $user->getUpcomingAppointment($id);
     $old_ones = $user->getOldAppointment($id);
 }
+// delete appointment
+if (isset($_POST['delete'])) {
+    include "app/contro/appointment.php";
+    $delete = new AppointmentContro($_POST['appointmentID'], $id, null, null, null, null);
+    $delete->deleteAppointment();
+}
 include "app/view/include/head.php";
 ?>
 <!-- Upcoming -->
 <div class="box-700 box profile">
     <h2>Upcoming</h2>
-    <?php foreach ($upcomings as $upcoming) { ?>
+    <?php // checks if there is an error message stored in the session
+    if (isset($error_type) && isset($_SESSION['error'])) {
+        if ($error_type == "error") { ?>
+            <p class="error"><?php out($_SESSION['error']) ?></p>
+        <?php } else { ?>
+            <p class="success"><?= $_SESSION['error'] ?></p>
+        <?php }
+        unset($_SESSION['error']);
+    }
+    foreach ($upcomings as $upcoming) { ?>
         <div class="grid-1-2">
             <div class="span-2 appointment">
                 <div>
@@ -42,6 +58,10 @@ include "app/view/include/head.php";
                     <p>extra info</p>
                     <textarea disabled><?= $upcoming['extra'] ?></textarea>
                 </div>
+                <form action="/appointment/<?= $id ?>" method="POST">
+                    <input type="hidden" name="appointmentID" value="<?= $upcoming['appointmentID'] ?>">
+                    <button class="btn blue" name="delete">delete</button>
+                </form>
             </div>
         </div>
     <?php } ?>

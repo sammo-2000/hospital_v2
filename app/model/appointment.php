@@ -26,4 +26,10 @@ class Appointment extends Dbh
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$result, $appointmentID]);
     }
+    protected function deleteAppointmentByID($appointmentID)
+    {
+        $sql = 'DELETE FROM `appointment` WHERE `appointmentID` = ?';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$appointmentID]);
+    }
 }

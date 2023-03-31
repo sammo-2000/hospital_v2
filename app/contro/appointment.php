@@ -42,4 +42,8 @@ class AppointmentContro extends Appointment
     {
         $this->updateResults($this->patientID, $this->extra);
     }
+    public function deleteAppointment()
+    {
+        $this->deleteAppointmentByID($this->patientID);
+    }
 }
