@@ -27,10 +27,14 @@
             <nav>
                 <ul>
                     <li><a href="/">home</a></li>
-                    <?php if (isset($_SESSION['logged_on'])) { 
+                    <?php if (isset($_SESSION['logged_on'])) {
                         if ($_SESSION['role'] != 'user') { ?>
                             <!-- Staff only -->
                             <li><a href="/search">search</a></li>
+                        <?php }
+                        if ($_SESSION['role'] == 'admin') { ?>
+                            <!-- Admin only -->
+                            <li><a href="/admin">admin</a></li>
                         <?php } ?>
                         <!-- Logged on -->
                         <li><a href="/profile">profile</a></li>

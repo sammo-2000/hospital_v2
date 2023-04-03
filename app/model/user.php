@@ -58,4 +58,15 @@ class User extends Dbh
         $result = $stmt->fetchAll();
         return $result;
     }
+    protected function deleteAccount($id, $option, $reason)
+    {
+        // Insert reason 
+        $sql = 'INSERT INTO `deleted-account` (`userID`, `options`, `reason`) VALUES (?, ?, ?)';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$id, $option, $reason]);
+        // Delete account
+        $sql = 'DELETE FROM `user` WHERE `userID` = ?';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$id]);
+    }
 }

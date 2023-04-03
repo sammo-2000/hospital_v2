@@ -13,6 +13,10 @@ if (isset($_SESSION['logged_on'])) {
         get('/profile/edit/$error_type', '/app/view/profile/edit.php');
         post('/profile/edit', '/app/view/profile/edit.php');
 
+        // Profile delete
+        get('/account/delete', '/app/view/profile/delete.php');
+        post('/account/delete', '/app/view/profile/delete.php');
+
         // Update appointment result
         get('/appointment/$id', '/app/view/appointment.php');
         post('/appointment/$id', '/app/view/appointment.php');
@@ -24,6 +28,12 @@ if (isset($_SESSION['logged_on'])) {
             get('/appointment/book/$id', '/app/view/profile/appointment.php');
             get('/appointment/book/$id/$error_type', '/app/view/profile/appointment.php');
             post('/appointment/book/$id', '/app/view/profile/appointment.php');
+        }
+
+        if ($_SESSION['role'] == 'admin') {
+            // Admin page
+            get('/admin', '/app/view/admin.php');
+            post('/admin', '/app/view/admin.php');
         }
     }
     // Register

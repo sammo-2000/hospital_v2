@@ -194,6 +194,13 @@ label span {
   text-transform: uppercase;
   color: grey;
 }
+.account-delete-btn {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 /* Search page */
 .search {
   width: 100%;
@@ -225,4 +232,44 @@ label span {
 }
 .search tr:nth-child(even) {
   background: rgb(228, 228, 228);
+}
+/* Admin page */
+.admin div {
+  padding: 20px;
+}
+.admin div:nth-child(1) {
+  border-bottom: 1px solid grey;
+}
+h2.admin {
+  text-align: center;
+  color: red;
+}
+.admin h3 {
+  padding-block-end: 10px;
+  margin-block-end: 10px;
+  border-bottom: 1px solid grey;
+}
+.admin form .btns {
+  display: block;
+  border: 1px solid grey;
+  padding: 5px;
+  margin-block: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  background: white;
+  transition: var(--transition);
+  line-height: 30px;
+  width: 100%;
+}
+.admin form .btns:hover {
+  background: grey;
+  color: white;
+  cursor: pointer;
+}
+.admin input {
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  margin-block-end: 5px;
 }

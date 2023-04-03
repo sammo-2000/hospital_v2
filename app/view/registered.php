@@ -22,31 +22,31 @@ include "app/view/include/head.php";
     <div class="grid-1-2">
         <div>
             <label for="first_name">first name</label>
-            <input type="text" id="first_name" name="first_name">
+            <input type="text" id="first_name" name="first_name" required>
         </div>
         <div>
             <label for="last_name">last name</label>
-            <input type="text" id="last_name" name="last_name">
+            <input type="text" id="last_name" name="last_name" required>
         </div>
         <div>
             <label for="mobile">mobile</label>
-            <input type="number" id="mobile" name="mobile">
+            <input type="number" id="mobile" name="mobile" required>
         </div>
         <div>
             <label for="dob">date of birth</label>
-            <input type="date" id="dob" name="dob" max="<?= date('Y-m-d'); ?>">
+            <input type="date" id="dob" name="dob" max="<?= date('Y-m-d'); ?>" required>
         </div>
         <div>
             <label for="city">city</label>
-            <input type="text" id="city" name="city">
+            <input type="text" id="city" name="city" required>
         </div>
         <div>
             <label for="postcode">postcode</label>
-            <input type="text" id="postcode" name="postcode">
+            <input type="text" id="postcode" name="postcode" required>
         </div>
     </div>
     <label for="address">address</label>
-    <input type="text" id="address" name="address">
+    <input type="text" id="address" name="address" required>
     <label for="history">medical history <span>(optional)</span></label>
     <textarea name="history" id="history" rows="10"></textarea>
     <button name="submit" class="btn blue">register</button>

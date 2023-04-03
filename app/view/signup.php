@@ -20,13 +20,13 @@ include "app/view/include/head.php";
         unset($_SESSION['error']);
     } ?>
     <label for="username">username</label>
-    <input type="text" id="username" name="username">
+    <input type="text" id="username" name="username" required>
     <label for="email">email</label>
-    <input type="email" id="email" name="email">
+    <input type="email" id="email" name="email" required>
     <label for="password">password</label>
-    <input type="password" id="password" name="password">
+    <input type="password" id="password" name="password" minlength="5" maxlength="20" required>
     <label for="password_confirm">password confirm</label>
-    <input type="password" id="password_confirm" name="password_confirm">
+    <input type="password" id="password_confirm" name="password_confirm" minlength="5" maxlength="20" required>
     <button name="submit" class="btn blue">signup</button>
 </form>
 <?php

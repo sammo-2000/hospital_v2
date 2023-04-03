@@ -71,4 +71,11 @@ class UserContro extends User
     {
         return $this->getOldAppointments($id, date('Y-m-d'));
     }
+    public function deleteUser()
+    {
+        $this->deleteAccount($this->userID, $this->email, $this->city);
+        session_destroy();
+        header("location: /");
+        exit();
+    }
 }

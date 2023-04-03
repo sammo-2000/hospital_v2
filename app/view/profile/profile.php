@@ -52,6 +52,7 @@ include "app/view/include/head.php";
             <p>postcode</p>
             <p><?= $userData['postcode'] ?></p>
         </div>
+        <a href="/account/delete" class="btn blue account-delete-btn">account delete</a>
         <div class="span-2 history">
             <p>history</p>
             <p><?= $userData['history'] ?></p>
