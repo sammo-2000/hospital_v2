@@ -273,3 +273,20 @@ h2.admin {
   padding: 5px;
   margin-block-end: 5px;
 }
+/* Doctor appointment */
+.my-appointments {
+  padding: 10px;
+}
+.my-appointment {
+  margin: 10px auto;
+  width: 100%;
+  padding: 20px;
+}
+.my-appointment > div {
+  display: flex;
+  gap: 5px;
+  margin-block: 5px;
+}
+.my-appointment > div p:nth-child(1) {
+  color: var(--blue);
+}

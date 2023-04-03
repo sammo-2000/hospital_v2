@@ -35,6 +35,11 @@ if (isset($_SESSION['logged_on'])) {
             get('/admin', '/app/view/admin.php');
             post('/admin', '/app/view/admin.php');
         }
+
+        if ($_SESSION['role'] == 'doctor') {
+            // Doctor only
+            get('/my-appointments', '/app/view/my-appointments.php');
+        }
     }
     // Register
     get('/register/$error_type', '/app/view/registered.php');

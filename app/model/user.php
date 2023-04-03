@@ -69,4 +69,13 @@ class User extends Dbh
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$id]);
     }
+    protected function getDoctorAppointments($date, $doctor)
+    {
+        $date = date('Y-m-d');
+        $sql = 'SELECT * FROM `appointment` WHERE `date` >= ? AND `doctor` = ? ORDER BY `date` ASC';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$date, $doctor]);
+        $result = $stmt->fetchAll();
+        return $result;
+    }
 }

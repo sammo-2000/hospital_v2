@@ -78,4 +78,9 @@ class UserContro extends User
         header("location: /");
         exit();
     }
+    public function getDoctorAppointment()
+    {
+        $doctor = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
+        return $this->getDoctorAppointments(date('Y-m-d'), $doctor);
+    }
 }

@@ -35,6 +35,9 @@
                         if ($_SESSION['role'] == 'admin') { ?>
                             <!-- Admin only -->
                             <li><a href="/admin">admin</a></li>
+                        <?php }
+                        if ($_SESSION['role'] == 'doctor') { ?>
+                            <li><a href="/my-appointments">my appointments</a></li>
                         <?php } ?>
                         <!-- Logged on -->
                         <li><a href="/profile">profile</a></li>
