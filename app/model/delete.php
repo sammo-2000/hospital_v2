@@ -42,4 +42,18 @@ class Delete extends Dbh
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$id]);
     }
+    protected function getAllContacts()
+    {
+        $sql = 'SELECT * FROM `contact`';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+        return $result;
+    }
+    protected function deleteContacts($id)
+    {
+        $sql = 'DELETE FROM `contact` WHERE `contactID` = ?';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$id]);
+    }
 }

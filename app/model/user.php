@@ -78,4 +78,10 @@ class User extends Dbh
         $result = $stmt->fetchAll();
         return $result;
     }
+    protected function contactUs($name, $email, $reason)
+    {
+        $sql = 'INSERT INTO `contact` (`name`, `email`, `reason`) VALUES (?, ?, ?)';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$name, $email, $reason]);
+    }
 }

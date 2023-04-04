@@ -83,4 +83,14 @@ class UserContro extends User
         $doctor = $_SESSION['firstName'] . ' ' . $_SESSION['lastName'];
         return $this->getDoctorAppointments(date('Y-m-d'), $doctor);
     }
+    public function contact($name, $email, $reason)
+    {
+        if (empty($name) || empty($email) || empty($reason)) {
+            echo "make sure all field are filled";
+            exit();
+        }
+
+        $this->contactUs($name, $email, $reason);
+        $_SESSION['error'] = 'Thank you, we got your form';
+    }
 }

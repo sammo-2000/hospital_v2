@@ -31,9 +31,6 @@
                         if ($_SESSION['role'] != 'user') { ?>
                             <!-- Staff only -->
                             <li><a href="/search">search</a></li>
-                        <?php }
-                        if ($_SESSION['role'] == 'admin') { ?>
-                            <!-- Admin only -->
                             <li><a href="/admin">admin</a></li>
                         <?php }
                         if ($_SESSION['role'] == 'doctor') { ?>

@@ -28,9 +28,7 @@ if (isset($_SESSION['logged_on'])) {
             get('/appointment/book/$id', '/app/view/profile/appointment.php');
             get('/appointment/book/$id/$error_type', '/app/view/profile/appointment.php');
             post('/appointment/book/$id', '/app/view/profile/appointment.php');
-        }
 
-        if ($_SESSION['role'] == 'admin') {
             // Admin page
             get('/admin', '/app/view/admin.php');
             post('/admin', '/app/view/admin.php');
@@ -60,6 +58,7 @@ if (isset($_SESSION['logged_on'])) {
 }
 // Route for the homepage
 get('/', '/app/view/index.php');
+post('/', '/app/view/index.php');
 
 // Load register page if user is logged on
 if (isset($_SESSION['logged_on'])) {
