@@ -14,7 +14,7 @@ include "app/view/include/head.php";
             </div>
             <div>
                 <p>Patient ID: </p>
-                <p><?= $appointment['patientID'] ?></p>
+                <p><a href="/profile/<?= $appointment['patientID'] ?>"><?= $appointment['patientID'] ?></a></p>
             </div>
             <div>
                 <p>Date:</p>

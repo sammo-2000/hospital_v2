@@ -2,10 +2,13 @@
 $title = "Profile";
 include "app/contro/userContro.php";
 $user = new UserContro(null, null, null, null, null, null, null);
+if (isset($_POST['role'])) {
+    $user->updateRole($_POST['userID'], $_POST['role']);   
+}
 if (isset($id)) {
     // Search patient profile if searched by ID
     $userData = $user->currentUser($id);
-    $appointments = $user->getUpcomingAppointment($id);
+    $appointments = $user->getUpcomingAppointment($id); 
 } else {
     // Search my profile if not viewed by ID
     $userData = $user->currentUser($_SESSION['userID']);
@@ -114,6 +117,18 @@ include "app/view/include/head.php";
             <p>email</p>
             <p class="email"><?= $userData['email'] ?></p>
         </div>
+        <?php if (isset($id)) { ?>
+            <form action="/profile/<?= $id ?>" method="post">
+                <input type="hidden" name="userID" value="<?= $id ?>">
+                <select name="role" id="role" required class="role">
+                    <option value="" selected disabled hidden>Choose New Role</option>
+                    <option>admin</option>
+                    <option>doctor</option>
+                    <option>user</option>
+                </select>
+                <button class="btn blue">update</button>
+            </form>
+        <?php } ?>
     </div>
 </div>
 <?php

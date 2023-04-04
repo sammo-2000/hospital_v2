@@ -93,4 +93,8 @@ class UserContro extends User
         $this->contactUs($name, $email, $reason);
         $_SESSION['error'] = 'Thank you, we got your form';
     }
+    public function updateRole($userID, $role)
+    {
+        $this->updateUserRole($userID, $role);
+    } 
 }

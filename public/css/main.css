@@ -210,6 +210,12 @@ label span {
   justify-content: center;
   text-align: center;
 }
+.role {
+  height: 40px;
+  width: 100%;
+  margin-bottom: 10px;
+  padding-inline: 10px;
+}
 /* Search page */
 .search {
   width: 100%;

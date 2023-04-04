@@ -84,4 +84,10 @@ class User extends Dbh
         $stmt = $this->connect()->prepare($sql);
         $stmt->execute([$name, $email, $reason]);
     }
+    protected function updateUserRole($userID, $role)
+    {
+        $sql = 'UPDATE `user` SET `role` = ? WHERE `userID` = ?';
+        $stmt = $this->connect()->prepare($sql);
+        $stmt->execute([$role, $userID]);
+    }
 }

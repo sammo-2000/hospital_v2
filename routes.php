@@ -34,6 +34,11 @@ if (isset($_SESSION['logged_on'])) {
             post('/admin', '/app/view/admin.php');
         }
 
+        if ($_SESSION['role'] == 'admin') {
+            // Admin to give new role
+            post('/profile/$id', '/app/view/profile/profile.php');
+        }
+
         if ($_SESSION['role'] == 'doctor') {
             // Doctor only
             get('/my-appointments', '/app/view/my-appointments.php');
