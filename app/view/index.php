@@ -61,14 +61,7 @@ include "app/view/include/head.php";
         <h2>contact us</h2>
         <?php if (isset($_SESSION['error'])) { ?>
             <p class="success"><?= $_SESSION['error'] ?></p>
-            <?php }
-        // checks if there is an error message stored in the session
-        if (isset($error_type) && isset($_SESSION['error'])) {
-            if ($error_type == "error") { ?>
-                <p class="error"><?php out($_SESSION['error']) ?></p>
-            <?php } else { ?>
-                <p class="success"><?= $_SESSION['error'] ?></p>
-            <?php }
+        <?php
             unset($_SESSION['error']);
         }
         if (isset($_SESSION['logged_on'])) { ?>
