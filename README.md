@@ -39,4 +39,4 @@ You must have docker installed before hand, if you don't have docker installed p
 
 ### Demo
 
-[Video Demo](https://studio.youtube.com/video/suBTdgvTOvw/edit)
+[Video Demo](https://www.youtube.com/watch?v=EGxn3xDLnvc)
