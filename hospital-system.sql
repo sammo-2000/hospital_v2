@@ -92,8 +92,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`userID`, `username`, `email`, `password`, `first_name`, `last_name`, `mobile`, `dob`, `city`, `postcode`, `address`, `history`, `role`, `registered`) VALUES
-(1, 'sammo', 'ayman.sammo75@gmail.com', '$2y$10$qQ9x1153P5pJTFisHFbe9ebQoTSOFTz9mT8.xmvJG4p1kHAtHIN56', 'ayman', 'sammo', '07810022505', '2000-04-10', 'sheffield', 'S14 1GE', '31 gaunt road', '', 'doctor', 'true'),
-(2, 'admin', 'admin@gmail.com', '$2y$10$Ef5RDHqxm3/KoQaYv3HsreZJCGtzfojrK.PaqDXXCVPfRIQUxi5yi', 'john', 'doe', '7123123', '1999-08-23', 'london', 'L4 2LD', 'somewhere in london', NULL, 'admin', 'true');
+(1, 'emily', 'emily.smith@gmail.com', '$2y$10$qQ9x1153P5pJTFisHFbe9ebQoTSOFTz9mT8.xmvJG4p1kHAtHIN56', 'emily', 'smith', '0812312342', '2000-01-01', 'london', 'L4 2LD', 'somewhere in london', '', 'doctor', 'true'),
+(2, 'john', 'admin@gmail.com', '$2y$10$Ef5RDHqxm3/KoQaYv3HsreZJCGtzfojrK.PaqDXXCVPfRIQUxi5yi', 'john', 'doe', '7123123', '1999-08-23', 'london', 'L4 2LD', 'somewhere in london', NULL, 'admin', 'true');
 
 --
 -- Indexes for dumped tables

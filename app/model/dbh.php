@@ -4,7 +4,7 @@ class Dbh
     private $host = 'localhost';
     private $user = 'root';
     private $pass = '';
-    private $dbName = 'shop';
+    private $dbName = 'hospital-system';
 
     protected function connect()
     {
